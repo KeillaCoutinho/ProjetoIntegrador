@@ -1,0 +1,341 @@
+:root {
+    color-scheme: dark;
+    --bg: #12210d;
+    --surface: rgba(255, 255, 255, 0.08);
+    --surface-strong: rgba(255, 255, 255, 0.12);
+    --text: #f5f7ee;
+    --muted: #c5d4be;
+    --accent: #8cd98c;
+    --accent-dark: #5aa35a;
+    --border: rgba(255, 255, 255, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: radial-gradient(circle at top left, rgba(140, 217, 140, 0.25), transparent 28%),
+                linear-gradient(180deg, #163220 0%, #0e140b 100%);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+}
+
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.skip-link:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 16px;
+    padding: 10px 16px;
+    background: var(--accent);
+    color: #0a2104;
+    border-radius: 8px;
+    z-index: 100;
+}
+
+header {
+    background: rgba(7, 42, 17, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.navbar,
+header nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.logo {
+    color: var(--accent);
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+    color: var(--accent);
+    transform: translateY(-1px);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.hero {
+    min-height: 56vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 18px;
+    scroll-margin-top: 88px;
+    background: linear-gradient(180deg, rgba(10,30,10,0.35), rgba(6,12,6,0.45)),
+                radial-gradient(circle at 10% 20%, rgba(140,217,140,0.06), transparent 25%);
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+.hero-content {
+    max-width: 980px;
+    text-align: left;
+    padding: 28px 32px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border: 1px solid rgba(255,255,255,0.03);
+    border-radius: 18px;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 4.5vw, 3.6rem);
+    margin: 0 0 8px;
+    color: #f8fff6;
+    letter-spacing: -0.5px;
+}
+
+.hero p {
+    color: var(--muted);
+    font-size: 1.05rem;
+    margin: 0 0 12px;
+}
+
+.hero .btn {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 12px 20px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+    color: #072006;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.hero .btn:hover { opacity: 0.95; transform: translateY(-2px); }
+
+.pagina {
+    max-width: 920px;
+    margin: 40px auto 24px;
+    padding: 32px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+}
+
+.pagina h1,
+.pagina h2 {
+    color: #edf6e8;
+    margin-top: 0;
+}
+
+.pagina h1 {
+    font-size: clamp(2rem, 2.8vw, 3rem);
+}
+
+.pagina p,
+.pagina li {
+    color: var(--muted);
+    font-size: 1rem;
+}
+
+.pagina ul {
+    padding-left: 1.35rem;
+}
+
+.pagina li {
+    margin-bottom: 0.75rem;
+}
+
+form {
+    display: grid;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+label {
+    display: block;
+    font-weight: 700;
+    color: #edf6e8;
+}
+
+input,
+textarea {
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text);
+    padding: 14px 16px;
+    border-radius: 14px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(140, 217, 140, 0.13);
+}
+
+button {
+    align-self: start;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+    color: #0a2104;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+button:hover,
+button:focus-visible {
+    opacity: 0.95;
+    transform: translateY(-1px);
+}
+
+footer {
+    background: #0c120b;
+    color: #dbe7cf;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 28px;
+}
+
+.footer-container h3,
+.footer-container h4 {
+    margin-bottom: 14px;
+    color: #f3f8e9;
+}
+
+.footer-container p,
+.footer-container li,
+.footer-container a {
+    color: var(--muted);
+    text-decoration: none;
+}
+
+.footer-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-container li {
+    margin-bottom: 10px;
+}
+
+.footer-container a:hover,
+.footer-container a:focus-visible {
+    color: var(--accent);
+}
+
+.copyright {
+    text-align: center;
+    padding: 18px 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    color: #9eb69d;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .navbar,
+    header nav {
+        flex-wrap: wrap;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 12px;
+        padding: 18px;
+        background: rgba(7, 42, 17, 0.95);
+        border-radius: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .hero {
+        min-height: 40vh;
+        padding: 28px 12px;
+    }
+
+    .hero-content {
+        padding: 18px 16px;
+        border-radius: 14px;
+    }
+
+    .pagina {
+        margin: 24px 16px;
+        padding: 28px;
+    }
+}
