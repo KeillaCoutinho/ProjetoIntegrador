@@ -19,3 +19,19 @@ if(form){
         form.reset();
     });
 }
+
+const revealElements = document.querySelectorAll(".scroll-reveal");
+
+if (revealElements.length) {
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    revealElements.forEach((element) => revealObserver.observe(element));
+}
+
