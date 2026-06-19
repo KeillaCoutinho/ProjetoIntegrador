@@ -22,24 +22,26 @@
     </nav>
 </header>
 
-<section class="pagina">
+<section class="pagina transparent">
 
     <h1>Entre em Contato</h1>
 
-    <form id="contatoForm">
+    <div class="form-card">
+        <form id="contatoForm">
 
-        <label>Nome</label>
-        <input type="text" required>
+            <label for="name">Nome</label>
+            <input id="name" name="name" type="text" required placeholder="Seu nome">
 
-        <label>E-mail</label>
-        <input type="email" required>
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" required placeholder="seu@exemplo.com">
 
-        <label>Mensagem</label>
-        <textarea rows="6" required></textarea>
+            <label for="message">Mensagem</label>
+            <textarea id="message" name="message" rows="6" required placeholder="Escreva sua mensagem"></textarea>
 
-        <button type="submit">Enviar</button>
+            <button type="submit">Enviar</button>
 
-    </form>
+        </form>
+    </div>
 
 </section>
 
