@@ -1,0 +1,25 @@
+{
+  "name": "projetofinal---web",
+  "version": "1.0.0",
+  "description": "**Raízes do Campo** é um site informativo desenvolvido com **HTML, CSS e JavaScript** com o objetivo de promover a **Agricultura Familiar**, destacando sua importância para a sustentabilidade, a economia local e a segurança alimentar.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KeillaCoutinho/ProjetoIntegrador.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/KeillaCoutinho/ProjetoIntegrador/issues"
+  },
+  "homepage": "https://github.com/KeillaCoutinho/ProjetoIntegrador#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "pg": "^8.23.0"
+  }
+}
