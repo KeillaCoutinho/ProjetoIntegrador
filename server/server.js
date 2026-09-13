@@ -33,6 +33,24 @@ app.get('/api/banco', async (req, res) => {
     }
 });
 
+// Listar categorias
+app.get('/api/categorias', async (req, res) => {
+    try {
+        const resultado = await pool.query(
+            'SELECT * FROM categoria ORDER BY nome'
+        );
+
+        res.json(resultado.rows);
+
+    } catch (erro) {
+        console.error(erro);
+
+        res.status(500).json({
+            mensagem: 'Erro ao buscar categorias'
+        });
+    }
+});
+
 app.listen(PORT, () => {
     console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
